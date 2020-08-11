@@ -1,0 +1,120 @@
+<template>
+  <div class="coord-form">
+    <div>
+      <select v-model="data.we" name="we" id="we">
+        <option value="-1">W</option>
+        <option value="1">E</option>
+      </select>
+      <div class="coords1">
+        <input
+          v-model="data.coord1"
+          type="text"
+          class="coord1"
+          placeholder="0"
+        />°
+        <input
+          v-model="data.coord2"
+          type="text"
+          class="coord2"
+          placeholder="0"
+          value="0"
+        />'
+        <input
+          v-model="data.coord3"
+          type="text"
+          class="coord3"
+          placeholder="0"
+          value="0"
+        />"
+      </div>
+    </div>
+    <div>
+      <select v-model="data.sn" name="sn" id="sn">
+        <option value="-1">S</option>
+        <option value="1">N</option>
+      </select>
+      <div class="coords2">
+        <input
+          v-model="data.coord4"
+          type="text"
+          class="coord4"
+          placeholder="0"
+          value="0"
+        />°
+        <input
+          v-model="data.coord5"
+          type="text"
+          class="coord5"
+          placeholder="0"
+          value="0"
+        />'
+        <input
+          v-model="data.coord6"
+          type="text"
+          class="coord6"
+          placeholder="0"
+          value="0"
+        />"
+      </div>
+    </div>
+    <button v-on:click="addMarker">Add marker</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Controls',
+  data() {
+    return {
+      data: {
+        we: -1,
+        sn: -1,
+        coord1: 0,
+        coord2: 0,
+        coord3: 0,
+        coord4: 0,
+        coord5: 0,
+        coord6: 0
+      }
+    }
+  },
+  methods: {
+    addMarker() {
+      this.$emit('addMarker', this.data)
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.coord-form {
+  font-size: 24px;
+  margin: 0 auto;
+  margin-top: 4em;
+  padding-top: 30px;
+  text-align: center;
+}
+select {
+  font-size: 24px;
+  width: 2em;
+}
+
+input[type='text'] {
+  font-size: 24px;
+  text-align: center;
+  margin: 3px;
+  width: 1.3em;
+}
+.coords1 {
+  display: inline-block;
+}
+
+.coords2 {
+  display: inline-block;
+}
+button {
+  font-size: 24px;
+  margin: 2em;
+}
+</style>

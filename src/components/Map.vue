@@ -1,0 +1,44 @@
+<template>
+  <l-map ref="map" style="height: 100vh" :crs="crs" :minZoom="zoom">
+    <l-image-overlay :url="mapImage" :bounds="bounds"></l-image-overlay>
+    <l-marker
+      v-for="marker in markers"
+      :key="marker.name"
+      :lat-lng="marker"
+    ></l-marker>
+  </l-map>
+</template>
+
+<script>
+import L from 'leaflet'
+import { LMap, LImageOverlay, LMarker } from 'vue2-leaflet'
+
+export default {
+  name: 'Map',
+  components: {
+    LMap,
+    LImageOverlay,
+    LMarker
+  },
+  props: {
+    markers: Array
+  },
+  data() {
+    return {
+      zoom: 5,
+      mapImage: '/map.jpg',
+      bounds: [
+        [-25.15, -25.3],
+        [0.15, 10.2]
+      ],
+      crs: L.CRS.Simple
+    }
+  },
+  mounted() {
+    this.$refs.map.mapObject.setView([-12, -4], 1)
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped></style>
