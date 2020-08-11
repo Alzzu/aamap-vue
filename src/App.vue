@@ -19,7 +19,7 @@ export default {
   components: {
     Map,
     Coordinates,
-    Controls
+    Controls,
   },
   data() {
     return {
@@ -28,17 +28,16 @@ export default {
         {
           name: '',
           lat: -15.63444444,
-          lng: -2.06861111
+          lng: -2.06861111,
         },
-        { name: '', lat: -24.04388889, lng: 0.818888889 }
+        { name: '', lat: -24.04388889, lng: 0.818888889 },
       ],
-      shareUrl: ''
+      shareUrl: '',
     }
   },
   beforeMount() {
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
-    console.log(urlParams.get('markers'))
     if (urlParams.has('markers')) {
       const markers = atob(urlParams.get('markers'))
       this.markers = JSON.parse(markers)
@@ -55,9 +54,11 @@ export default {
       this.markers = []
     },
     share() {
-      console.log(JSON.stringify(this.markers))
+      const currentUrl = window.location.href
       const url =
-        window.location + '?markers=' + btoa(JSON.stringify(this.markers))
+        currentUrl.split('?')[0] +
+        '?markers=' +
+        btoa(JSON.stringify(this.markers))
       this.shareUrl = url
       this.doCopy(url)
     },
@@ -72,8 +73,8 @@ export default {
           console.log(e)
         }
       )
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,26 +1,26 @@
 <template>
   <div class="coord-form">
     <div>
-      <select v-model="data.we" name="we" id="we">
+      <select v-model.number="data.we" name="we" id="we">
         <option value="-1">W</option>
         <option value="1">E</option>
       </select>
       <div class="coords1">
         <input
-          v-model="data.coord1"
+          v-model.number="data.coord1"
           type="text"
           class="coord1"
           placeholder="0"
         />°
         <input
-          v-model="data.coord2"
+          v-model.number="data.coord2"
           type="text"
           class="coord2"
           placeholder="0"
           value="0"
         />'
         <input
-          v-model="data.coord3"
+          v-model.number="data.coord3"
           type="text"
           class="coord3"
           placeholder="0"
@@ -29,27 +29,27 @@
       </div>
     </div>
     <div>
-      <select v-model="data.sn" name="sn" id="sn">
+      <select v-model.number="data.sn" name="sn" id="sn">
         <option value="-1">S</option>
         <option value="1">N</option>
       </select>
       <div class="coords2">
         <input
-          v-model="data.coord4"
+          v-model.number="data.coord4"
           type="text"
           class="coord4"
           placeholder="0"
           value="0"
         />°
         <input
-          v-model="data.coord5"
+          v-model.number="data.coord5"
           type="text"
           class="coord5"
           placeholder="0"
           value="0"
         />'
         <input
-          v-model="data.coord6"
+          v-model.number="data.coord6"
           type="text"
           class="coord6"
           placeholder="0"
@@ -74,15 +74,15 @@ export default {
         coord3: 0,
         coord4: 0,
         coord5: 0,
-        coord6: 0
-      }
+        coord6: 0,
+      },
     }
   },
   methods: {
     addMarker() {
       this.$emit('addMarker', this.data)
-    }
-  }
+    },
+  },
 }
 </script>
 
