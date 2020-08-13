@@ -3,9 +3,14 @@
     <div>
       <Coordinates @addMarker="addMarker" />
       <Controls @clearMarkers="clearMarkers" @share="share" />
+
+      <input v-model.number="bound1" type="number" step=".01" />
+      <input v-model.number="bound2" type="number" step=".01" />
+      <input v-model.number="bound3" type="number" step=".01" />
+      <input v-model.number="bound4" type="number" step=".01" />
     </div>
 
-    <Map :markers="markers" />
+    <Map :markers="markers" :boundss="bounds" />
   </div>
 </template>
 
@@ -33,8 +38,13 @@ export default {
         { name: '', lat: -24.04388889, lng: 0.818888889 },
       ],
       shareUrl: '',
+      bound1: -26.33,
+      bound2: -28.28,
+      bound3: 7.32,
+      bound4: 15.38,
     }
   },
+
   beforeMount() {
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
@@ -75,10 +85,20 @@ export default {
       )
     },
   },
+  computed: {
+    bounds: function() {
+      return [
+        [this.bound1, this.bound2],
+        [this.bound3, this.bound4],
+      ]
+    },
+  },
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 html,
 body {
   margin: 0;
@@ -86,7 +106,7 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

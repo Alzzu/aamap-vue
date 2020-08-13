@@ -17,14 +17,12 @@
           type="text"
           class="coord2"
           placeholder="0"
-          value="0"
         />'
         <input
           v-model.number="data.coord3"
           type="text"
           class="coord3"
           placeholder="0"
-          value="0"
         />"
       </div>
     </div>
@@ -39,21 +37,18 @@
           type="text"
           class="coord4"
           placeholder="0"
-          value="0"
         />°
         <input
           v-model.number="data.coord5"
           type="text"
           class="coord5"
           placeholder="0"
-          value="0"
         />'
         <input
           v-model.number="data.coord6"
           type="text"
           class="coord6"
           placeholder="0"
-          value="0"
         />"
       </div>
     </div>
@@ -63,7 +58,7 @@
 
 <script>
 export default {
-  name: 'Controls',
+  name: 'Coordinates',
   data() {
     return {
       data: {
@@ -97,14 +92,23 @@ export default {
 }
 select {
   font-size: 24px;
-  width: 2em;
+  padding: 3px;
+  margin: 3px;
+  width: 2.5em;
+
+  border: 2px solid #bfbfbf;
+  border-radius: 4px;
 }
 
 input[type='text'] {
   font-size: 24px;
   text-align: center;
+  padding: 3px;
   margin: 3px;
   width: 1.3em;
+
+  border: 2px solid #bfbfbf;
+  border-radius: 4px;
 }
 .coords1 {
   display: inline-block;
@@ -114,6 +118,8 @@ input[type='text'] {
   display: inline-block;
 }
 button {
+  padding: 10px;
+  font-weight: 500;
   font-size: 24px;
   margin: 2em;
 }

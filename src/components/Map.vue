@@ -1,11 +1,13 @@
 <template>
   <l-map ref="map" style="height: 100vh" :crs="crs" :minZoom="zoom">
-    <l-image-overlay :url="mapImage" :bounds="bounds"></l-image-overlay>
+    <l-image-overlay :url="mapImage" :bounds="bounds2"></l-image-overlay>
     <l-marker
       v-for="marker in markers"
       :key="marker.name"
       :lat-lng="marker"
     ></l-marker>
+    <l-marker :lat-lng="bounds2[0]"></l-marker>
+    <l-marker :lat-lng="bounds2[1]"></l-marker>
   </l-map>
 </template>
 
@@ -18,25 +20,30 @@ export default {
   components: {
     LMap,
     LImageOverlay,
-    LMarker
+    LMarker,
   },
   props: {
-    markers: Array
+    markers: Array,
+    boundss: Array,
   },
   data() {
     return {
       zoom: 5,
-      mapImage: '/map.jpg',
+      mapImage: '/map4.jpg',
       bounds: [
         [-25.15, -25.3],
-        [0.15, 10.2]
+        [0.15, 10.2],
       ],
-      crs: L.CRS.Simple
+      bounds2: [
+        [-26.33, -28.28],
+        [7.32, 15.38],
+      ],
+      crs: L.CRS.Simple,
     }
   },
   mounted() {
     this.$refs.map.mapObject.setView([-12, -4], 1)
-  }
+  },
 }
 </script>
 
