@@ -1,6 +1,6 @@
 <template>
   <l-map ref="map" style="height: 100vh" :crs="crs" :minZoom="zoom">
-    <l-image-overlay :url="mapImage" :bounds="bounds2"></l-image-overlay>
+    <l-image-overlay :url="mapImage" :bounds="boundss"></l-image-overlay>
     <l-marker
       v-for="marker in markers"
       :key="marker.name"
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       zoom: 5,
-      mapImage: '/map4.jpg',
+      mapImage: '/map5.jpg',
       bounds: [
         [-25.15, -25.3],
         [0.15, 10.2],

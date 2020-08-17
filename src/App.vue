@@ -38,10 +38,10 @@ export default {
         { name: '', lat: -24.04388889, lng: 0.818888889 },
       ],
       shareUrl: '',
-      bound1: -26.33,
-      bound2: -28.28,
-      bound3: 7.32,
-      bound4: 15.38,
+      bound1: -25,
+      bound2: -25.04,
+      bound3: 0,
+      bound4: 10.05,
     }
   },
 
