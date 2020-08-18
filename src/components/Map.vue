@@ -6,8 +6,6 @@
       :key="marker.name"
       :lat-lng="marker"
     ></l-marker>
-    <l-marker :lat-lng="bounds2[0]"></l-marker>
-    <l-marker :lat-lng="bounds2[1]"></l-marker>
   </l-map>
 </template>
 
@@ -33,10 +31,6 @@ export default {
       bounds: [
         [-25.15, -25.3],
         [0.15, 10.2],
-      ],
-      bounds2: [
-        [-26.33, -28.28],
-        [7.32, 15.38],
       ],
       crs: L.CRS.Simple,
     }
