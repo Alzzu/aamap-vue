@@ -15,6 +15,7 @@ const purgecss = postcssPurgecss({
     /^(?!(|.*?:)cursor-move).+-move$/,
     /^router-link(|-exact)-active$/,
     /leaflet/,
+    /marker/,
   ],
 })
 
