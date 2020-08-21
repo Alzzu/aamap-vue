@@ -1,13 +1,37 @@
 <template>
-  <div id="app" class="container">
-    <div>
+  <div id="app" class="flex">
+    <div class="flex flex-col items-center">
       <Coordinates @addMarker="addMarker" />
       <Controls @clearMarkers="clearMarkers" @share="share" />
-
-      <input v-model.number="bound1" type="number" step=".01" />
-      <input v-model.number="bound2" type="number" step=".01" />
-      <input v-model.number="bound3" type="number" step=".01" />
-      <input v-model.number="bound4" type="number" step=".01" />
+      <div class="flex flex-col my-5 w-3/4">
+        <span>Map bound adjust</span>
+        <div class="flex flex-row">
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            v-model.number="bound1"
+            type="number"
+            step=".01"
+          />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            v-model.number="bound2"
+            type="number"
+            step=".01"
+          />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            v-model.number="bound3"
+            type="number"
+            step=".01"
+          />
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            v-model.number="bound4"
+            type="number"
+            step=".01"
+          />
+        </div>
+      </div>
     </div>
 
     <Map :markers="markers" :boundss="bounds" />
@@ -111,10 +135,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
 }
 </style>
