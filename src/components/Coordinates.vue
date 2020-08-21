@@ -1,5 +1,5 @@
 <template>
-  <div class="coord-form">
+  <div class="flex flex-col mt-32 mb-24">
     <div class="flex flex-row items-center ">
       <select
         class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -13,19 +13,19 @@
       <input
         v-model.number="data.coord1"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />°
       <input
         v-model.number="data.coord2"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />'
       <input
         v-model.number="data.coord3"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />"
     </div>
@@ -42,24 +42,24 @@
       <input
         v-model.number="data.coord4"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />°
       <input
         v-model.number="data.coord5"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />'
       <input
         v-model.number="data.coord6"
         type="text"
-        class="text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="coord-input"
         placeholder="0"
       />"
     </div>
     <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-8 rounded focus:outline-none focus:shadow-outline"
       v-on:click="addMarker"
     >
       Add marker
@@ -95,26 +95,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .coord-form {
-  font-size: 24px;
   margin: 0 auto;
   margin-top: 4em;
   padding-top: 30px;
   text-align: center;
 }
-select {
-  font-size: 24px;
-  padding: 3px;
-  margin: 3px;
-  width: 2.5em;
 
-  border: 2px solid #bfbfbf;
-  border-radius: 4px;
+.coord-input {
+  @apply text-center shadow appearance-none border rounded w-12 py-2 px-3 m-1 text-gray-700 leading-tight;
 }
 
-button {
-  padding: 10px;
-  font-weight: 500;
-  font-size: 24px;
-  margin: 2em;
+.coord-input:focus {
+  @apply outline-none shadow-outline;
 }
 </style>

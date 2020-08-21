@@ -123,12 +123,6 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 #app {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
