@@ -22,7 +22,8 @@ export default {
   },
   data() {
     return {
-      markers: [
+      markers: [],
+      calibMarkers: [
         { name: '', lat: -0.311388888, lng: -7.59 },
         {
           name: '',
