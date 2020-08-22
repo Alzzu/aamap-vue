@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       zoom: 5,
-      mapImage: '/map5.jpg',
+      mapImage: '/map2.jpg',
       bounds: [
         [-25.15, -25.3],
         [0.15, 10.2],
