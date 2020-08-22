@@ -1,39 +1,9 @@
 <template>
   <div id="app" class="flex">
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center lg:mx-32 md:mx-16 mx-8">
       <Coordinates @addMarker="addMarker" />
       <Controls @clearMarkers="clearMarkers" @share="share" />
-      <div class="flex flex-col my-5 w-3/4">
-        <span>Map bound adjust</span>
-        <div class="flex flex-row">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            v-model.number="bound1"
-            type="number"
-            step=".01"
-          />
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            v-model.number="bound2"
-            type="number"
-            step=".01"
-          />
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            v-model.number="bound3"
-            type="number"
-            step=".01"
-          />
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            v-model.number="bound4"
-            type="number"
-            step=".01"
-          />
-        </div>
-      </div>
     </div>
-
     <Map :markers="markers" :boundss="bounds" />
   </div>
 </template>
