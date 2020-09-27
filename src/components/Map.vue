@@ -1,5 +1,5 @@
 <template>
-  <l-map ref="map" style="height: 100vh" :crs="crs" :minZoom="zoom">
+  <l-map ref="map" style="height: 100vh" v-on:click="dropMarker" :crs="crs" :minZoom="zoom">
     <l-image-overlay :url="mapImage" :bounds="boundss"></l-image-overlay>
     <l-marker
       v-for="marker in markers"
@@ -38,6 +38,11 @@ export default {
   mounted() {
     this.$refs.map.mapObject.setView([-12, -4], 1)
   },
+  methods: {
+    dropMarker(e) {
+      this.$emit('dropMarker', e.latlng)
+    },
+  }
 }
 </script>
 

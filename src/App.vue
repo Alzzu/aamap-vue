@@ -4,7 +4,7 @@
       <Coordinates @addMarker="addMarker" />
       <Controls @clearMarkers="clearMarkers" @share="share" />
     </div>
-    <Map :markers="markers" :boundss="bounds" />
+    <Map @dropMarker="dropMarker" :markers="markers" :boundss="bounds" />
   </div>
 </template>
 
@@ -54,6 +54,9 @@ export default {
       let lat = (data.coord4 + data.coord5 / 60 + data.coord6 / 3600) * data.sn
 
       this.markers.push({ name: '', lat, lng })
+    },
+    dropMarker(data) {
+      this.markers.push({ name: '', ...data })
     },
     clearMarkers() {
       this.markers = []
