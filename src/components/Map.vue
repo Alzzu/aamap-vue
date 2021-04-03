@@ -42,6 +42,12 @@ export default {
     dropMarker(e) {
       this.$emit('dropMarker', e.latlng)
     },
+  },
+  watch: {
+    markers: function (val) {
+      const marker = val[val.length - 1];
+      this.$refs.map.mapObject.setView([marker.lat, marker.lng], 6)
+    }
   }
 }
 </script>
